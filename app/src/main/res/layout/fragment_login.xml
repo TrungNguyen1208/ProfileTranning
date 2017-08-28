@@ -1,0 +1,88 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_login_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="ptit.nttrung.profiletranning.login.LoginFragment">
+
+    <RelativeLayout
+        android:id="@+id/cont_login_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            style="@style/Label"
+            android:id="@+id/tv_login_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:textSize="34sp"
+            android:text="@string/header_welcome" />
+
+        <TextView
+            style="@style/Label.Sub"
+            android:id="@+id/tv_login_email_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/tv_login_header"
+            android:text="Email" />
+
+        <EditText
+            style="@style/InputField.Credential.Email"
+            android:id="@+id/edt_login_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_login_email_sub"
+            android:hint="Email"/>
+
+        <TextView
+            style="@style/Label.Sub"
+            android:id="@+id/tv_login_pass_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edt_login_email"
+            android:text="Password"/>
+
+        <EditText
+            style="@style/InputField.Credential.Password"
+            android:id="@+id/edt_login_password_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_login_pass_sub"
+            android:layout_marginTop="16dp"
+            android:hint="Password" />
+
+        <Button
+            style="@style/Button.Flat.Primary"
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/edt_login_password_sub"
+            android:layout_centerHorizontal="true"
+            android:text="Sign In" />
+
+        <Button
+            style="@style/Button.Flat.Primary"
+            android:id="@+id/btn_create_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/btn_login"
+            android:layout_centerHorizontal="true"
+            android:text="Register" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/pro_login_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
+
+</FrameLayout>
