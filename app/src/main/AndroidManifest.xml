@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".createaccount.CreateAccountActivity" />
-        <activity android:name=".profilepage.ProfilePageActivity"></activity>
+        <activity android:name=".profilepage.ProfilePageActivity" />
+        <activity android:name=".splash.SplashActivity" />
+        <activity android:name=".photodetail.PhotoDetailActivity"></activity>
     </application>
 
 </manifest>
