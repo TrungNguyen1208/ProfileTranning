@@ -2,6 +2,7 @@ package ptit.nttrung.profiletranning.photodetail;
 
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.StringRes;
 import android.view.LayoutInflater;
@@ -19,6 +20,8 @@ import ptit.nttrung.profiletranning.R;
 import ptit.nttrung.profiletranning.data.auth.AuthInjection;
 import ptit.nttrung.profiletranning.data.database.DatabaseInjection;
 import ptit.nttrung.profiletranning.data.scheduler.SchedulerInjection;
+import ptit.nttrung.profiletranning.photogallery.PhotoGalleryActivity;
+import ptit.nttrung.profiletranning.profilepage.ProfilePageActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -100,7 +103,7 @@ public class PhotoDetailFragment extends Fragment implements PhotoDetailContract
 
     @Override
     public void makeToast(String message) {
-
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -123,12 +126,14 @@ public class PhotoDetailFragment extends Fragment implements PhotoDetailContract
 
     @Override
     public void startProfilePageActivity() {
-
+        Intent i = new Intent(getActivity(), ProfilePageActivity.class);
+        startActivity(i);
     }
 
     @Override
     public void startPhotoGalleryActivity() {
-
+        Intent i = new Intent(getActivity(), PhotoGalleryActivity.class);
+        startActivity(i);
     }
 
     @Override
@@ -138,16 +143,28 @@ public class PhotoDetailFragment extends Fragment implements PhotoDetailContract
 
     @Override
     public void setPresenter(PhotoDetailContract.Presenter presenter) {
-
+        this.presenter = presenter;
     }
 
     @Override
     public void showProgressIndicator(boolean show) {
-
+        if (show) {
+            progressBar.setVisibility(android.view.View.VISIBLE);
+            photo.setVisibility(android.view.View.INVISIBLE);
+        } else {
+            progressBar.setVisibility(android.view.View.INVISIBLE);
+            photo.setVisibility(android.view.View.VISIBLE);
+        }
     }
 
     @Override
     public String getPhotoURL() {
         return null;
+    }
+
+    @Override
+    public void onDestroy() {
+        presenter.unsubscribe();
+        super.onDestroy();
     }
 }

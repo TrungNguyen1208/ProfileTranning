@@ -2,8 +2,8 @@ package ptit.nttrung.profiletranning.photodetail;
 
 import android.support.annotation.StringRes;
 
-import ptit.nttrung.profiletranning.BasePresenter;
-import ptit.nttrung.profiletranning.BaseView;
+import ptit.nttrung.profiletranning.base.BasePresenter;
+import ptit.nttrung.profiletranning.base.BaseView;
 
 /**
  * Created by TrungNguyen on 9/2/2017.

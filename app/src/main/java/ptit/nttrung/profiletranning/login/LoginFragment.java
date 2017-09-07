@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import ptit.nttrung.profiletranning.R;
 import ptit.nttrung.profiletranning.createaccount.CreateAccountActivity;
 import ptit.nttrung.profiletranning.data.auth.AuthInjection;
@@ -69,6 +70,7 @@ public class LoginFragment extends Fragment implements LoginContract.View {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
+        ButterKnife.bind(this,view);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

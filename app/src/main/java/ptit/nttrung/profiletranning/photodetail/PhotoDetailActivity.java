@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import ptit.nttrung.profiletranning.R;
+import ptit.nttrung.profiletranning.photogallery.PhotoGalleryActivity;
 import ptit.nttrung.profiletranning.util.ActivityUtils;
 
 public class PhotoDetailActivity extends AppCompatActivity {

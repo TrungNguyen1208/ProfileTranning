@@ -29,8 +29,9 @@ import ptit.nttrung.profiletranning.data.auth.AuthInjection;
 import ptit.nttrung.profiletranning.data.database.DatabaseInjection;
 import ptit.nttrung.profiletranning.data.scheduler.SchedulerInjection;
 import ptit.nttrung.profiletranning.login.LoginActivity;
-
-import static android.R.attr.thumbnail;
+import ptit.nttrung.profiletranning.photogallery.PhotoGalleryActivity;
+import ptit.nttrung.profiletranning.profiledetail.ProfileDetailActivity;
+import ptit.nttrung.profiletranning.profilesettings.ProfileSettingsActivity;
 
 /**
  * A simple {@link Fragment} subclass.

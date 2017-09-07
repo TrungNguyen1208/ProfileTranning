@@ -1,6 +1,7 @@
 package ptit.nttrung.profiletranning.data.auth;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,11 +24,18 @@ import io.reactivex.MaybeOnSubscribe;
 
 public class FirebaseAuthService implements AuthSource {
 
+    private static final String TAG = FirebaseAuthService.class.getName();
+
     private FirebaseAuth auth;
     private FirebaseAuth.AuthStateListener listener;
 
     private FirebaseAuthService() {
         auth = FirebaseAuth.getInstance();
+        if (auth == null){
+            Log.e(TAG,"null");
+        }else {
+            Log.e(TAG,"not null");
+        }
     }
 
     public static FirebaseAuthService getInstance() {

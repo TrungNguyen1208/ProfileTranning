@@ -10,7 +10,7 @@ import io.reactivex.Maybe;
  * Created by TrungNguyen on 9/2/2017.
  */
 
-public interface PhotoScource {
+public interface PhotoSource {
     Maybe<List<Photo>> getThumbnails(ContentResolver resolver);
 
     void setReturnFail(boolean bool);

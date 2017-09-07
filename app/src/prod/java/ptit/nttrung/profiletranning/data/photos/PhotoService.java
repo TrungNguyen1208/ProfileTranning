@@ -16,7 +16,7 @@ import io.reactivex.MaybeOnSubscribe;
  * Created by TrungNguyen on 9/2/2017.
  */
 
-public class PhotoService implements PhotoScource {
+public class PhotoService implements PhotoSource {
     //TODO: MAKE THIS INTO PHOTO_UTIL and talk to it via rxjava. It can probably be injected in presneter.
     private PhotoService() {
 

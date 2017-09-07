@@ -1,7 +1,7 @@
 package ptit.nttrung.profiletranning.profilepage;
 
-import ptit.nttrung.profiletranning.BaseView;
-import ptit.nttrung.profiletranning.BasePresenter;
+import ptit.nttrung.profiletranning.base.BaseView;
+import ptit.nttrung.profiletranning.base.BasePresenter;
 
 /**
  * Created by TrungNguyen on 8/28/2017.

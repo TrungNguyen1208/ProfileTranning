@@ -4,6 +4,7 @@ package ptit.nttrung.profiletranning.createaccount;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
@@ -15,7 +16,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.ButterKnife;
 import ptit.nttrung.profiletranning.R;
+import ptit.nttrung.profiletranning.data.auth.AuthInjection;
+import ptit.nttrung.profiletranning.data.database.DatabaseInjection;
+import ptit.nttrung.profiletranning.data.scheduler.SchedulerInjection;
 import ptit.nttrung.profiletranning.login.LoginActivity;
 import ptit.nttrung.profiletranning.profilepage.ProfilePageActivity;
 
@@ -38,11 +43,17 @@ public class CreateAccountFragment extends Fragment implements CreateAccountCont
         return new CreateAccountFragment();
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.setRetainInstance(true);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_create_account, container, false);
+        ButterKnife.bind(this,v);
 
         progressBar = (ProgressBar) v.findViewById(R.id.pro_create_account_loading);
 
@@ -71,6 +82,20 @@ public class CreateAccountFragment extends Fragment implements CreateAccountCont
         emailInput.requestFocus();
 
         return v;
+    }
+
+    @Override
+    public void onActivityCreated (Bundle savedInstanceState){
+        super.onActivityCreated(savedInstanceState);
+        if (presenter == null) {
+            presenter = new CreateAccountPresenter(
+                    AuthInjection.provideAuthSource(),
+                    DatabaseInjection.provideDatabaseSource(),
+                    this,
+                    SchedulerInjection.provideSchedulerProvider()
+            );
+        }
+        presenter.subscribe();
     }
 
     @Override

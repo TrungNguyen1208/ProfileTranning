@@ -48,7 +48,7 @@ public class LoginPresenter implements LoginContract.Presenter {
         }
     }
 
-    private void attemptLogIn(Credentials credentials) {
+    public void attemptLogIn(Credentials credentials) {
         view.showProgressIndicator(true);
         compositeDisposable.add(
                 authSource.attemptLogin(credentials)
