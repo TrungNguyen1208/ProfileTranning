@@ -5,3 +5,5 @@ Tranning App to learn :
 - RxJava/RxAndroid 2 
 - Mockito to help with Unit Testing
 - Model View Presenter Architecture
+
+I learn to this : https://github.com/BracketCove/Profiler
